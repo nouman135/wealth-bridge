@@ -1,17 +1,10 @@
 import React from 'react'
 import "../components/homepage.css"
 
+
 export default function HomePage() {
   return (
     <div>
-        <nav className="navbar navbar-light bg-light static-top">
-            <div className="container">
-                <a className="navbar-brand" href="#!">Wealth Bridge</a>
-                <a className="btn btn-light log-in-btn" href="#signup">Login</a>
-                <a className="btn btn-primary" href="#signup">Sign Up</a>
-            </div>
-        </nav>
-    
         <header className="masthead">
             <div className="container position-relative">
                 <div className="row justify-content-center">
