@@ -10933,3 +10933,15 @@ footer.footer {
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
+.showcase-img1{
+  background-image: url(https://sloanreview.mit.edu/wp-content/uploads/2021/06/GEN-Davenport-Bean-AI-Wealth-Management-1290x860-1.jpg);
+  background-size: contain; 
+}
+.showcase-img2{
+  background-image: url(https://www.forbes.com/advisor/in/wp-content/uploads/2023/01/Best_Gold_Stocks.svg);
+  background-repeat: no-repeat;
+}
+.showcase-img3{
+  background-image: url(https://cdn-icons-png.flaticon.com/512/3798/3798317.png);
+  background-repeat: no-repeat;
+}
