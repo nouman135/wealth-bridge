@@ -4,7 +4,7 @@ import "../components/homepage.css";
 export default function HomePage() {
   return (
     <div>
-      <header className="masthead">
+      <header className="masthead mb-3">
         <div className="container position-relative">
           <div className="row justify-content-center">
             <div className="col-xl-6">
@@ -18,39 +18,7 @@ export default function HomePage() {
           </div>
         </div>
       </header>
-      <section className="features-icons bg-light text-center">
-        <div className="container mt-3 mb-3">
-          <div style={{ margintop:'5rem' }} className="row">
-            <div className="col-lg-4">
-              <div className="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                <h3>Expert Idea Creators</h3>
-                <p className="lead mb-0">
-                  Through this platform, you will get ideas from experianced and
-                  experts persons
-                </p>
-              </div>
-            </div>
-            <div className="col-lg-4">
-              <div className="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                <h3>Relationship Manager</h3>
-                <p className="lead mb-0">
-                  Our Expert RM's Suggest you Ideas According To Your Interest
-                </p>
-              </div>
-            </div>
-            <div className="col-lg-4">
-              <div className="features-icons-item mx-auto mb-0 mb-lg-3">
-                <h3>Easy to Use</h3>
-                <p className="lead mb-0">
-                  This Application is Designed And Developed User Friendly As
-                  Everyone Can Use It Easily
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr/>
-      </section>
+     
       <section className="showcase">
         <div className="container-fluid p-0">
           <div className="row g-0">
@@ -118,8 +86,8 @@ export default function HomePage() {
                     </div>
                   </div>
                   <div className="col-auto">
-                    <button
-                      className="btn btn-primary btn-lg"
+                    <button style={{background:'#609EA2'}}
+                      className="btn btn-lg"
                       id="submitButton"
                       type="submit"
                     >

@@ -46,16 +46,22 @@ const Dashboard = () => {
       id: 1,
       title: "Tech Stocks",
       description: "Invest in leading technology companies",
+      category: "Stocks",
+      uploadDate: "2022-02-28",
     },
     {
       id: 2,
       title: "Real Estate Investment Trusts",
-      description: "in real estate without the hassle of property management",
+      description: "Invest in real estate without the hassle of property management",
+      category: "Real Estate",
+      uploadDate: "2022-03-01",
     },
     {
       id: 3,
       title: "Green Energy",
       description: "Invest in renewable energy companies",
+      category: "Energy",
+      uploadDate: "2022-03-02",
     },
   ]);
 
@@ -64,7 +70,7 @@ const Dashboard = () => {
       <Grid container spacing={3}>
         <Grid item xs={12}>
           <Paper className={classes.paper}>
-            <Button
+            <Button style={{background:'#609EA2'}}
               variant="contained"
               color="primary"
               className={classes.addButton}
@@ -82,7 +88,7 @@ const Dashboard = () => {
                     <ListItem>
                       <ListItemText
                         primary={idea.title}
-                        secondary={idea.description}
+                        secondary={`Category: ${idea.category} | Date Uploaded: ${idea.uploadDate} | ${idea.description}`}
                       />
                       <DeleteIcon />
                       <EditIcon />

@@ -9,7 +9,7 @@ export default function LoginPage() {
 		<div className="row justify-content-center">
 			<div className="col-md-6">
 				<div className="card">
-					<div className="card-header text-center">
+					<div style={{background:'#609EA2'}} className="card-header text-center">
 						<h4>Sign in to your account</h4>
 					</div>
 					<div className="card-body">
@@ -25,7 +25,7 @@ export default function LoginPage() {
 							<div className="form-group form-check">
 								
 							</div>
-							<button type="submit" className="btn btn-primary btn-block">Sign in</button>
+							<button style={{background:'#609EA2'}} type="submit" className="btn btn-block">Sign in</button>
 						</form>
 						<hr/>
 						<p className="text-center">
