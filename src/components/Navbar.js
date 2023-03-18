@@ -9,16 +9,18 @@ export default function Navbar() {
       <nav style={{background:'#332C39'}} className="navbar navbar-light static-top">
         <div className="container d-flex justify-content-between">
           <Link className="navbar-brand text-light" to="/">Wealth Bridge</Link>
-          {location.pathname === "/login" || location.pathname === "/signup" ?
+          {location.pathname === "/login" || location.pathname === "/signup" || location.pathname === "/RM" ?
             <div>
               <Link style={{background:'#F0EEED'}} className="btn log-in-btn me-2" to="/login">Log In</Link>
               <Link style={{background:'#609EA2'}} className="btn me-2" to="/signup">Sign Up</Link>
+              <Link style={{background:'#609EA2'}} className="btn rm me-2" to="/RM">RM Page</Link>
               <img style={{width: '30px', color: 'white'}} src='https://www.svgrepo.com/show/43426/profile.svg' alt="Profile" />
             </div>
           :
             <div>
               <Link style={{background:'#F0EEED'}} className="btn log-in-btn me-2" to="/login">Log In</Link>
               <Link style={{background:'#609EA2'}} className="btn me-2" to="/signup">Sign Up</Link>
+              <Link style={{background:'#609EA2'}} className="btn rm me-2" to="/RM">RM Page</Link>
             </div>
           }
         </div>
