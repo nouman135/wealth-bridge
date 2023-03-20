@@ -1,23 +1,25 @@
-import './App.css';
-import HomePage from './components/HomePage';
-import LoginPage from './components/LoginPage';
-import SignupPage from './components/SignupPage';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Dashboard from './components/Dashboard';
+import React from 'react'
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import './App.css'
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import Login from './components/login.component'
+import SignUp from './components/signup.component'
+import Dashboard from './components/dashboard.component'
+import Logout from './components/logout.component'
+
 function App() {
   return (
-    <BrowserRouter>
-    <Navbar/>
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/signup" element={<SignupPage />} />
-    </Routes>
-   <Dashboard/>
-  </BrowserRouter>
-  );
+    <Router>
+      <div className="App">
+            <Routes>
+              <Route exact path="/" element={<Login />} />
+              <Route path="/sign-in" element={<Login />} />
+              <Route path="/sign-up" element={<SignUp />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/logout" element={<Logout />} />
+            </Routes>
+          </div>
+    </Router>
+  )
 }
-
-export default App;
-
+export default App
