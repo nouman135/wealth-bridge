@@ -1,4 +1,4 @@
-# Welcome to the App we have name this app Wealth 
+# Welcome to the App we have name this app Wealth Bridge
 
 We are using Laravel 9 for backend. We use react.js on the frontend.
 
