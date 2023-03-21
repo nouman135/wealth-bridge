@@ -25,7 +25,7 @@ export default class Dashboard extends Component {
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <div className="container-fluid">
             <a className="navbar-brand" href="/dashboard">
-              React.js and Larevel App
+              Wealth Bridge Investments!
             </a>
             <button
               className="navbar-toggler"
@@ -49,7 +49,7 @@ export default class Dashboard extends Component {
                     aria-current="page"
                     href="/dashboard"
                   >
-                    Home
+                    RM Dashboard
                   </a>
                 </li>
               </ul>
@@ -61,12 +61,8 @@ export default class Dashboard extends Component {
             </div>
           </div>
         </nav>
-
-        <h1 className="text-black mt-5">
-          welcome to your profile{" "}
-          <span className="text-primary">{this.state.user.first_name} </span>
-        </h1>
       </div>
     );
   }
 }
+
