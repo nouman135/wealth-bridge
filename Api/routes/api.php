@@ -33,5 +33,6 @@ Route::group([
 
 ], function ($router) {
     Route::get('posts', [PostController::class, 'index']);
+    Route::post('post', [PostController::class, 'store']);
 });
 
