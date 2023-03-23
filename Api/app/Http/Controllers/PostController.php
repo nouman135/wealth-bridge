@@ -20,4 +20,23 @@ class PostController extends Controller
             'posts' => $posts,
         ]);
     }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
+        ]);
+
+        $post = Post::create([
+            'title' => $request->title,
+            'description' => $request->description,
+        ]);
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Post created successfully',
+            'post' => $post,
+        ]);
+    }
 }
