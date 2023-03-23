@@ -48,4 +48,23 @@ class PostController extends Controller
             'post' => $post,
         ]);
     }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
+        ]);
+
+        $post = Post::find($id);
+        $post->title = $request->title;
+        $post->description = $request->description;
+        $post->save();
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Post updated successfully',
+            'post' => $post,
+        ]);
+    }
 }
