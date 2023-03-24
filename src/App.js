@@ -7,6 +7,7 @@ import SignUp from "./components/signup.component";
 import Dashboard from "./components/dashboard.component";
 import Logout from "./components/logout.component";
 import PostView from "./components/post/view.component";
+import PostCreate from "./components/post/add.component"
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/view-post/:id" element={ <PostView /> } />
+          <Route path="/add-employee/:id" element={ <PostCreate /> }/>
         </Routes>
       </div>
     </Router>

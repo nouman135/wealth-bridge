@@ -1,6 +1,6 @@
 import React, { Component } from "react";
+import { Navigate } from "react-router-dom";
 import PostService from "../../services/post.service";
-
 
 export default class List extends Component {
   constructor(props) {
@@ -24,11 +24,13 @@ export default class List extends Component {
   }
 
   viewPost(id) {
-    this.props.history.push(`/view-post/${id}`);
+    // this.props.history.push(`/view-post/${id}`);
+    <Navigate to={`/view-post/${id}`} />;
   }
 
   editPost(id) {
-    this.props.history.push(`/add-post/${id}`);
+    // this.props.history.push(`/add-post/${id}`);
+    <Navigate to={`/add-post/${id}`} />;
   }
 
   componentDidMount() {
@@ -37,17 +39,17 @@ export default class List extends Component {
     });
   }
 
-  addPost(){
-    this.props.history.push('/add-post/_add');
-}
+  addPost() {
+    // this.props.history.push('/add-post/_add');
+    <Navigate to={`/add-post/_add`} />;
+  }
 
   render() {
     return (
       <div>
         <h2 className="text-center">Post List</h2>
         <div className="row">
-          <button
-            className="btn btn-primary" onClick={this.addPost}>
+          <button className="btn btn-primary" onClick={this.addPost}>
             {" "}
             Add Post
           </button>
@@ -69,14 +71,14 @@ export default class List extends Component {
                   <td> {post.description}</td>
                   <td>
                     <button
-                        onClick={() => this.editPost(post.id)}
+                      onClick={() => this.editPost(post.id)}
                       className="btn btn-info"
                     >
                       Update{" "}
                     </button>
                     <button
                       style={{ marginLeft: "10px" }}
-                        onClick={() => this.deletePost(post.id)}
+                      onClick={() => this.deletePost(post.id)}
                       className="btn btn-danger"
                     >
                       Delete{" "}

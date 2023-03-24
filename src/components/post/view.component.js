@@ -7,14 +7,12 @@ export default class View extends Component {
     super(props);
 
     this.state = {
-      id: this.props.match.params.id,
+      // id: this.props.match.params.id,
       post: {},
     };
-    console.log(this.props)
   }
-
+  
   componentDidMount() {
-    
     PostService.getById(this.state.id).then((res) => {
       this.setState({ post: res.data.post });
     });

@@ -52,7 +52,7 @@ export default class Login extends Component {
 
   render() {
     if (this.state.loggedIN) {
-      return <Navigate to="/dashboard" />;
+      return <Navigate to={`/dashboard`} />;
     }
     return (
       <div className="App">
