@@ -54,7 +54,7 @@ export default class Dashboard extends Component {
                 </li>
               </ul>
               <ul className="navbar-nav">
-                <a class="nav-link" href="/logout">
+                <a className="nav-link" href="/logout">
                   logout{" "}
                 </a>
               </ul>
