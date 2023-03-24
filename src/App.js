@@ -6,6 +6,7 @@ import Login from "./components/login.component";
 import SignUp from "./components/signup.component";
 import Dashboard from "./components/dashboard.component";
 import Logout from "./components/logout.component";
+import PostView from "./components/post/view.component";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/logout" element={<Logout />} />
+          <Route path="/view-post/:id" element={ <PostView /> } />
         </Routes>
       </div>
     </Router>
