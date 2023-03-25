@@ -3,11 +3,10 @@ import PostService from "../../services/post.service";
 import { useParams } from "react-router-dom";
 
 function withParams(Component) {
-  return props => <Component {...props} params={useParams()} />;
+  return (props) => <Component {...props} params={useParams()} />;
 }
 
-
-class View extends Component {
+export default withParams(class View extends Component {
   constructor(props) {
     super(props);
 
@@ -16,7 +15,7 @@ class View extends Component {
       post: {},
     };
   }
-  
+
   componentDidMount() {
     PostService.getById(this.state.id).then((res) => {
       this.setState({ post: res.data.post });
@@ -43,6 +42,5 @@ class View extends Component {
       </div>
     );
   }
-}
+})
 
-export default withParams(View)

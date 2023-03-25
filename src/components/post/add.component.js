@@ -1,14 +1,18 @@
 import React, { Component } from "react";
-import { Navigate } from "react-router";
+import { Navigate, useParams } from "react-router-dom";
 import PostService from "../../services/post.service";
 
-export default class Add extends Component {
+function withParams(Component) {
+  return (props) => <Component {...props} params={useParams()} />;
+}
+
+export default withParams(class Add extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       // step 2
-      id: this.props.match.params.id,
+      id: this.props.params.id,
       title: "",
       description: "",
     };
@@ -126,4 +130,4 @@ export default class Add extends Component {
       </div>
     );
   }
-}
+})
