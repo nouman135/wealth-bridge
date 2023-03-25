@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Navigate } from "react-router-dom";
 import PostService from "../../services/post.service";
-
+import './list.css'
 export default class List extends Component {
   constructor(props) {
     super(props);
@@ -47,7 +47,7 @@ export default class List extends Component {
   render() {
     return (
       <div>
-        <h2 className="text-center">Post List</h2>
+        {/* <h2 className="text-center">Post List</h2>
         <div className="row">
           <button className="btn btn-primary" onClick={this.addPost}>
             {" "}
@@ -94,9 +94,40 @@ export default class List extends Component {
                 </tr>
               ))}
             </tbody>
-          </table>
+          </table> */}
+          <div>
+<head>
+	<title>Dashboard</title>
+</head>
+	<header>
+		<h2>Dashboard</h2>
+		<div className="header-buttons">
+			<button>Add RM</button>
+			<button>Add New Idea</button>
+		</div>
+	</header>
+	<main>
+  {this.state.posts.map((post) => (
+		<ul className="idea-list" key={post.id}>
+			<li className="idea-item">
+				<div className="idea-title">{post.title}</div>
+				<div className="idea-category">Category 1</div>
+				<div className="idea-date">Uploaded on: 01/01/2022</div>
+				<div className="idea-description">{post.description}</div>
+				<div className="idea-actions">
+					<button onClick={() => this.editPost(post.id)}>Update {" "}</button>
+					<button onClick={() => this.deletePost(post.id)}>Delete{" "}</button>
+					<button>Share</button>
+				</div>
+			</li>
+			
+         
+		</ul>
+    ))}
+	</main>
+
+    </div>
         </div>
-      </div>
     );
   }
 }
