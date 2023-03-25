@@ -20,7 +20,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/view-post/:id" element={ <PostView /> } />
-          <Route path="/add-employee/:id" element={ <PostCreate /> }/>
+          <Route path="/add-post/:id" element={ <PostCreate /> }/>
         </Routes>
       </div>
     </Router>
