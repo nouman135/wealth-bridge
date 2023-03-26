@@ -12,7 +12,7 @@ export default class Dashboard extends Component {
       loggedIN = false;
     }
     this.state = {
-      user: odata.user,
+      user: odata?.user,
       loggedIN,
     };
   }
