@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Outernavbar from "./outernavbar.component";
 import axios from "axios";
 import { Navigate } from "react-router-dom";
 
@@ -56,7 +55,6 @@ export default class Login extends Component {
     }
     return (
       <div className="App">
-        <Outernavbar />
         <div className="auth-wrapper">
           <div className="auth-inner">
             <form onSubmit={this.onSubmit}>

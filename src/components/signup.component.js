@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Outernavbar from "./outernavbar.component";
 import axios from "axios";
 
 export default class SignUp extends Component {
@@ -96,7 +95,6 @@ export default class SignUp extends Component {
   render() {
     return (
       <div className="App">
-        <Outernavbar />
         <div className="auth-wrapper">
           <div className="auth-inner">
             <form onSubmit={this.onSubmit}>
