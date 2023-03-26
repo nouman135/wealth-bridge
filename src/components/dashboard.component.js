@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Navigate } from "react-router-dom";
-import Navbar from "./Navbar";
 import List from "./post/list.component";
 export default class Dashboard extends Component {
   constructor(props) {
