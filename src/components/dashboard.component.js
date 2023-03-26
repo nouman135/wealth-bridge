@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Navigate } from "react-router-dom";
+import Navbar from "./Navbar";
 import List from "./post/list.component";
-
 export default class Dashboard extends Component {
   constructor(props) {
     super(props);
@@ -23,10 +23,10 @@ export default class Dashboard extends Component {
     }
     return (
       <div>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        {/* <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <div className="container-fluid">
             <a className="navbar-brand" href="/dashboard">
-              React.js and Larevel App
+              Wealth Bridge
             </a>
             <button
               className="navbar-toggler"
@@ -52,6 +52,13 @@ export default class Dashboard extends Component {
                   >
                     Home
                   </a>
+                  <a
+                    className="nav-link active"
+                    aria-current="page"
+                    href="/dashboard"
+                  >
+                    Home
+                  </a>
                 </li>
               </ul>
               <ul className="navbar-nav">
@@ -61,7 +68,7 @@ export default class Dashboard extends Component {
               </ul>
             </div>
           </div>
-        </nav>
+        </nav> */}
 
         <h1 className="text-black mt-5">
           welcome to your profile{" "}

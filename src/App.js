@@ -8,13 +8,16 @@ import Dashboard from "./components/dashboard.component";
 import Logout from "./components/logout.component";
 import PostView from "./components/post/view.component";
 import PostCreate from "./components/post/add.component"
+import HomePage from "./components/post/HomePage";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <Router>
       <div className="App">
+        <Navbar/>
         <Routes>
-          <Route exact path="/" element={<Login />} />
+          <Route exact path="/" element={<HomePage/>} />
           <Route path="/sign-in" element={<Login />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/dashboard" element={<Dashboard />} />
