@@ -101,9 +101,6 @@ export default class List extends Component {
             </tbody>
           </table> */}
         <div>
-          <head>
-            <title>Dashboard</title>
-          </head>
           <header>
             <h2>Dashboard</h2>
             <div className="header-buttons">
