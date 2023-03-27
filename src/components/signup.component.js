@@ -1,9 +1,14 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Navigate } from "react-router-dom";
+
 
 export default class SignUp extends Component {
   constructor(props) {
     super(props);
+    let loggedIN = true;
+    const udata = JSON.parse(localStorage.getItem("user"));
+    if (udata == null) loggedIN = false
     this.onChangeFirstName = this.onChangeFirstName.bind(this);
     this.onChangeLastName = this.onChangeLastName.bind(this);
     this.onChangePhone = this.onChangePhone.bind(this);
@@ -19,6 +24,7 @@ export default class SignUp extends Component {
       email: "",
       password: "",
       password_confirmation: "",
+      loggedIN
     };
   }
   onChangeFirstName(e) {
@@ -93,6 +99,9 @@ export default class SignUp extends Component {
   }
 
   render() {
+    if (this.state.loggedIN === true) {
+      return <Navigate to="/dashboard" />;
+    }
     return (
       <div className="App">
         <div className="auth-wrapper">
