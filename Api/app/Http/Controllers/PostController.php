@@ -26,11 +26,13 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string|max:255',
+            'category' => 'required|string|max:255'
         ]);
 
         $post = Post::create([
             'title' => $request->title,
             'description' => $request->description,
+            'category' => $request->category
         ]);
 
         return response()->json([
@@ -54,11 +56,13 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string|max:255',
+            'category' => 'required|string|max:255'
         ]);
 
         $post = Post::find($id);
         $post->title = $request->title;
         $post->description = $request->description;
+        $post->category = $request->category;
         $post->save();
 
         return response()->json([
