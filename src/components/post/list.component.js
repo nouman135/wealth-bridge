@@ -48,8 +48,13 @@ export default class List extends Component {
     <Navigate to={`/add-post/_add`} />;
   }
 
-  getISODate(date) {
-    return date.toLocaleDateString('en-GB');
+  getISODate(getISO) {
+    // return date.toLocaleDateString('en-GB');
+    const date = new Date(getISO);
+    const timestampWithOffset = date.getTime();
+    const dateWithOffset = new Date(timestampWithOffset);
+
+    return dateWithOffset;
   }
   
 
@@ -121,8 +126,8 @@ export default class List extends Component {
                   <div className="idea-title">Title: {post.title}</div>
                   <div className="idea-category">Category: {post.category}</div>
                   <div className="idea-description">Description: {post.description}</div>
-                  <div className="idea-date">Created At: {this.getISODate(new Date(post.created_at))}</div>
-                  <div className="idea-date">Updated At: {this.getISODate(new Date(post.updated_at))}</div>
+                  <div className="idea-date">Created At: {this.getISODate(post.created_at).toString()}</div>
+                  <div className="idea-date">Updated At: {this.getISODate(post.updated_at).toString()}</div>
                   <div className="idea-actions">
                    <Link to={`/add-post/${post.id}`} > <button onClick={() => this.editPost(post.id)}>
                       Update{" "}
