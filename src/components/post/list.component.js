@@ -47,6 +47,10 @@ export default class List extends Component {
     // this.props.history.push('/add-post/_add');
     <Navigate to={`/add-post/_add`} />;
   }
+
+  getISODate(date) {
+    return date.toLocaleDateString('en-GB');
+  }
   
 
   render() {
@@ -114,10 +118,11 @@ export default class List extends Component {
             {this.state.posts.map((post) => (
               <ul className="idea-list" key={post.id}>
                 <li className="idea-item">
-                  <div className="idea-title">{post.title}</div>
-                  <div className="idea-category">Category 1</div>
-                  <div className="idea-date">Uploaded on: 01/01/2022</div>
-                  <div className="idea-description">{post.description}</div>
+                  <div className="idea-title">Title: {post.title}</div>
+                  <div className="idea-category">Category: {post.category}</div>
+                  <div className="idea-description">Description: {post.description}</div>
+                  <div className="idea-date">Created At: {this.getISODate(new Date(post.created_at))}</div>
+                  <div className="idea-date">Updated At: {this.getISODate(new Date(post.updated_at))}</div>
                   <div className="idea-actions">
                    <Link to={`/add-post/${post.id}`} > <button onClick={() => this.editPost(post.id)}>
                       Update{" "}

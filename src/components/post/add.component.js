@@ -17,9 +17,11 @@ export default withParams(class Add extends Component {
       id: this.props.params.id,
       title: "",
       description: "",
+      category: ""
     };
     this.changeTitleHandler = this.changeTitleHandler.bind(this);
     this.changeDescriptionHandler = this.changeDescriptionHandler.bind(this);
+    this.changeCategoryHandler = this.changeCategoryHandler.bind(this);
     this.saveOrUpdatePost = this.saveOrUpdatePost.bind(this);
   }
 
@@ -34,19 +36,21 @@ export default withParams(class Add extends Component {
         this.setState({
           title: post.title,
           description: post.description,
+          category: post.category
         });
       });
     }
   }
   saveOrUpdatePost = (e) => {
     e.preventDefault();
-    if (!this.state.title || !this.state.description) {
+    if (!this.state.title || !this.state.description || !this.state.category) {
       alert("Please Fill The Form Completly");
       return;  
     }
     let post = {
         title: this.state.title,
         description: this.state.description,
+        category: this.state.category
     };
     console.log("post => " + JSON.stringify(post));
 
@@ -71,6 +75,10 @@ export default withParams(class Add extends Component {
   changeDescriptionHandler = (event) => {
     this.setState({ description: event.target.value });
   };
+
+  changeCategoryHandler = (event) => {
+    this.setState({ category: event.target.value })
+  }
 
   cancel() {
     // this.props.history.push("/posts");
@@ -166,7 +174,7 @@ export default withParams(class Add extends Component {
                       value={this.state.category}
                       onChange={this.changeCategoryHandler}
                     >
-                      <option value="">Select a category</option>
+                      <option value="" disabled>Select a category</option>
                       <option value="bond">Bond</option>
                       <option value="equity">Equity</option>
                       <option value="realestate">Real Estate</option>
