@@ -8,7 +8,8 @@ export default class SignUp extends Component {
     super(props);
     let loggedIN = true;
     const udata = JSON.parse(localStorage.getItem("user"));
-    if (udata == null) loggedIN = false
+    if (udata == null) loggedIN = false;
+
     this.onChangeFirstName = this.onChangeFirstName.bind(this);
     this.onChangeLastName = this.onChangeLastName.bind(this);
     this.onChangePhone = this.onChangePhone.bind(this);
@@ -71,6 +72,7 @@ export default class SignUp extends Component {
       email: this.state.email,
       password: this.state.password,
       password_confirmation: this.state.password_confirmation,
+      role: "ADMIN"
     };
     axios
       .post("http://127.0.0.1:8000/api/auth/register", userObject)
