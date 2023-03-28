@@ -174,12 +174,12 @@ export default withParams(class Add extends Component {
                       onChange={this.changeCategoryHandler}
                     >
                       <option value="" disabled>Select a category</option>
-                      <option value="bond">Bond</option>
-                      <option value="equity">Equity</option>
-                      <option value="realestate">Real Estate</option>
-                      <option value="gold">Gold</option>
-                      <option value="crypto">Crypto</option>
-                      <option value="stocks">Stocks</option>
+                      <option value="Bond">Bond</option>
+                      <option value="Equity">Equity</option>
+                      <option value="Realestate">Real Estate</option>
+                      <option value="Gold">Gold</option>
+                      <option value="Crypto">Crypto</option>
+                      <option value="Stocks">Stocks</option>
                     </select>
                   </div>
                   <div className="mb-3">
