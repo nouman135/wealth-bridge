@@ -54,7 +54,7 @@ export default withRouter(
           </header>
           <main className="row">
             {this.state.posts.map((post) => (
-              <div key={post.id} className="col-6 my-2 ">
+              <div key={post.id} className="col-md-6 col-xs-8 col-12 my-2 ">
                 <div className="card shadow-sm text-center h-100" key={post.id}>
                   <div className="card-header">
                     <h3>{post.title}</h3>
