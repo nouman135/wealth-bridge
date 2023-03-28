@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Navigate, useParams } from "react-router-dom";
 import PostService from "../../services/post.service";
 import { Link } from "react-router-dom";
-import Navbar from "../Navbar";
 
 function withParams(Component) {
   return (props) => <Component {...props} params={useParams()} />;

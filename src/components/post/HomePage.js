@@ -30,7 +30,7 @@ export default function HomePage() {
           <div className="card-body">
             <h5 className="card-title">Investing in Emerging Markets</h5>
             <p className="card-text">Learn more about the potential benefits and risks of investing in emerging markets.</p>
-            <a href="#" className="btn btn-primary">Read More</a>
+            <button className="btn btn-primary">Read More</button>
           </div>
         </div>
         <div className="card mx-3 col-md-5">
@@ -38,7 +38,7 @@ export default function HomePage() {
           <div className="card-body">
             <h5 className="card-title">Planning for Retirement</h5>
             <p className="card-text">Discover the different strategies for planning your retirement and ensuring financial security.</p>
-            <a href="#" className="btn btn-primary">Read More</a>
+            <button className="btn btn-primary">Read More</button>
           </div>
         </div>
       </div>
@@ -77,7 +77,7 @@ export default function HomePage() {
         <div className="col-lg-8 mx-auto text-center">
           <h2>Ready to get started?</h2>
           <p>Sign up today to schedule a consultation with one of our Relationship Managers and start your journey to financial success.</p>
-          <a href="#" className="btn btn-primary">Sign Up</a>
+          <button className="btn btn-primary">Sign Up</button>
         </div>
       </div>
     </div>

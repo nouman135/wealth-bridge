@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import HomePage from "./post/HomePage";
 
 export default class Navbar extends Component {
   constructor(props) {
@@ -46,7 +45,7 @@ export default class Navbar extends Component {
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <div className="container">
-            <a className="navbar-brand ml-3" href="#">
+            <a className="navbar-brand ml-3" href="/">
               Wealth Bridge
             </a>
             <button
