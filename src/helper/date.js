@@ -1,11 +1,6 @@
 export const convertISODateTime = (getISO) => {
-  const event = new Date(getISO);
-  const options = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
+  const date = new Date(getISO);
+  const style = { dateStyle: "full", timeStyle: "short" };
 
-  return event.toLocaleDateString(undefined, options);
+  return new Intl.DateTimeFormat("en", style).format(date);
 };
