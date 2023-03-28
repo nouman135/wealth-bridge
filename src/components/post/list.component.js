@@ -16,6 +16,8 @@ export default withRouter(
       this.addPost = this.addPost.bind(this);
       this.editPost = this.editPost.bind(this);
       this.deletePost = this.deletePost.bind(this);
+
+      this.navigate = this.props.navigate;
     }
 
     deletePost(id) {
@@ -27,8 +29,7 @@ export default withRouter(
     }
 
     editPost(id) {
-      const { navigate } = this.props;
-      navigate(`/add-post/${id}`);
+      this.navigate(`/add-post/${id}`);
     }
 
     componentDidMount() {
@@ -38,8 +39,7 @@ export default withRouter(
     }
 
     addPost() {
-      const { navigate } = this.props;
-      navigate(`/add-post/_add`);
+      this.navigate(`/add-post/_add`);
     }
 
     render() {
