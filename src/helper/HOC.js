@@ -1,14 +1,11 @@
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate, useParams } from "react-router-dom";
 
-const withRouter = WrappedComponent => props => {
+const withRouter = (WrappedComponent) => (props) => {
   const navigate = useNavigate();
-  // other hooks
+  const param = useParams();
 
   return (
-    <WrappedComponent
-      {...props}
-      {...{ navigate }}
-    />
+    <WrappedComponent {...props} {...{ navigate, param }} params={param} />
   );
 };
 

@@ -2,12 +2,16 @@ import axios from "axios";
 
 const baseURL = "http://localhost:8000/api";
 
+export const getUser = () => {
+    return JSON.parse(localStorage.getItem("user"));
+}
+
 export const getToken = () => {
-    const getUser = JSON.parse(localStorage.getItem("user"));
+    const fetchUser = getUser();
     let setToken;
 
-    if (getUser) {
-        setToken = getUser.access_token;
+    if (fetchUser) {
+        setToken = fetchUser.access_token;
     }
     else {
         setToken = null
