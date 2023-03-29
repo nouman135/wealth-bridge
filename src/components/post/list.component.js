@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PostService from "../../services/post.service";
 import withRouter from "../../helper/HOC";
 import { convertISODateTime } from "../../helper/date";
-import "./list.css";
+import "./list.component.css";
 
 export default withRouter(
   class List extends Component {
@@ -42,9 +42,48 @@ export default withRouter(
       this.navigate(`/add-post/_add`);
     }
 
+    showPosts() {
+      return this.state.posts.map((post) => (
+        <div key={post.id} className="col-md-6 col-xs-8 col-12 my-2 ">
+          <div className="card shadow-sm text-center h-100" key={post.id}>
+            <div className="card-header">
+              <figure>
+                <blockquote class="blockquote">
+                  <p>{post.title}</p>
+                </blockquote>
+                <figcaption class="blockquote-footer">
+                  {post.category}
+                </figcaption>
+              </figure>
+            </div>
+            <div className="card-body">
+              <p className="card-text">{post.description}</p>
+            </div>
+            <small className="text-muted my-2">
+              {convertISODateTime(post.updated_at)}
+            </small>
+            <div className="card-footer">
+              <button
+                className="btn btn-sm"
+                onClick={() => this.editPost(post.id)}
+              >
+                Update
+              </button>
+              <button
+                className="btn btn-danger btn-sm"
+                onClick={() => this.deletePost(post.id)}
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+
     render() {
       return (
-        <div className="container-fluid">
+        <div className="container">
           <header>
             <h2>Dashboard</h2>
             <div className="header-buttons">
@@ -52,38 +91,7 @@ export default withRouter(
               <button onClick={() => this.addPost()}>Add New Idea</button>
             </div>
           </header>
-          <main className="row">
-            {this.state.posts.map((post) => (
-              <div key={post.id} className="col-md-6 col-xs-8 col-12 my-2 ">
-                <div className="card shadow-sm text-center h-100" key={post.id}>
-                  <div className="card-header">
-                    <h3>{post.title}</h3>
-                    <p className="card-title">{post.category}</p>
-                  </div>
-                  <div className="card-body">
-                    <p className="card-text">{post.description}</p>
-                    <p className="card-text">
-                      {convertISODateTime(post.updated_at)}
-                    </p>
-                  </div>
-                  <div className="card-footer">
-                    <button
-                      className="btn btn-sm"
-                      onClick={() => this.editPost(post.id)}
-                    >
-                      Update
-                    </button>
-                    <button
-                      className="btn btn-danger btn-sm"
-                      onClick={() => this.deletePost(post.id)}
-                    >
-                      Delete
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </main>
+          <main className="row">{this.showPosts()}</main>
         </div>
       );
     }
