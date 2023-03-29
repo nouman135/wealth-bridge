@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "../footer";
-import Navbar from "../navbar";
-
+import Footer from "../components/footer";
+import Navbar from "../components/navbar";
 const Dashboard = () => {
   return (
     <>
