@@ -8,7 +8,7 @@ import Dashboard from "./components/dashboard.component";
 import Logout from "./components/logout.component";
 import PostView from "./components/post/view.component";
 import PostCreate from "./components/post/add.component"
-import HomePage from "./components/post/HomePage";
+import HomePage from "./pages/HomePage";
 import Navbar from "./components/Navbar";
 
 function App() {
