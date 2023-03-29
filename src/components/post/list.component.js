@@ -48,10 +48,10 @@ export default withRouter(
           <div className="card shadow-sm text-center h-100" key={post.id}>
             <div className="card-header">
               <figure>
-                <blockquote class="blockquote">
+                <blockquote className="blockquote">
                   <p>{post.title}</p>
                 </blockquote>
-                <figcaption class="blockquote-footer">
+                <figcaption className="blockquote-footer">
                   {post.category}
                 </figcaption>
               </figure>
