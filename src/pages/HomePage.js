@@ -1,10 +1,12 @@
 import React from "react";
 import "./HomePage.css";
 import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 export default function HomePage() {
   return (
     <>
+      <Navbar />
       <div className="hero">
         <div className="container">
           <div className="row">

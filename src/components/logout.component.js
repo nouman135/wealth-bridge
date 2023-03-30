@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Navbar from "./Navbar";
 
 export default class Logout extends Component {
   constructor(props) {
@@ -9,6 +10,7 @@ export default class Logout extends Component {
   render() {
     return (
       <div>
+        <Navbar />
         <h1>You have been logged-out</h1>
         <Link to="/sign-in">Login again</Link>
       </div>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Navigate } from "react-router-dom";
-
+import Navbar from "./Navbar";
 
 export default class SignUp extends Component {
   constructor(props) {
@@ -25,7 +25,7 @@ export default class SignUp extends Component {
       email: "",
       password: "",
       password_confirmation: "",
-      loggedIN
+      loggedIN,
     };
   }
   onChangeFirstName(e) {
@@ -72,7 +72,7 @@ export default class SignUp extends Component {
       email: this.state.email,
       password: this.state.password,
       password_confirmation: this.state.password_confirmation,
-      role: "ADMIN"
+      role: "ADMIN",
     };
     axios
       .post("http://127.0.0.1:8000/api/auth/register", userObject)
@@ -106,6 +106,7 @@ export default class SignUp extends Component {
     }
     return (
       <div className="App">
+        <Navbar />
         <div className="auth-wrapper">
           <div className="auth-inner">
             <form onSubmit={this.onSubmit}>

@@ -23,7 +23,7 @@ export default class Navbar extends Component {
     if (isLoggedIn) {
       button = (
         <li className="nav-item">
-          <Link className="nav-link" to="./logout">
+          <Link className="nav-link" to="/logout">
             {" "}
             logout{" "}
           </Link>
@@ -33,13 +33,13 @@ export default class Navbar extends Component {
       button = (
         <>
           <li className="nav-item">
-            <Link className="nav-link" to="./sign-in">
+            <Link className="nav-link" to="/sign-in">
               {" "}
               login{" "}
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="./sign-up">
+            <Link className="nav-link" to="/sign-up">
               {" "}
               Sign up{" "}
             </Link>
@@ -68,12 +68,12 @@ export default class Navbar extends Component {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <Link className="nav-link" to="./">
+                  <Link className="nav-link" to="/">
                     Home
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="./dashboard">
+                  <Link className="nav-link" to="/dashboard">
                     Dashboard
                   </Link>
                 </li>

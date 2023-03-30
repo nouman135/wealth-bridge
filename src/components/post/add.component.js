@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PostService from "../../services/post.service";
 import withRouter from "../../helper/HOC";
+import Navbar from "../Navbar";
 
 export default withRouter(
   class Add extends Component {
@@ -91,86 +92,89 @@ export default withRouter(
     }
     render() {
       return (
-        <div className="container my-3">
-          <div className="row justify-content-center">
-            <div className="col-lg-8">
-              <div className="card shadow-lg border-0 rounded-lg">
-                <div className="card-header">{this.getTitle()}</div>
-                <div className="card-body">
-                  <form>
-                    <div className="mb-3">
-                      <label htmlFor="title" className="form-label">
-                        Title
-                      </label>
-                      <input
-                        type="text"
-                        placeholder="Enter a title"
-                        id="title"
-                        name="title"
-                        className="form-control"
-                        value={this.state.title}
-                        onChange={this.changeTitleHandler}
-                      />
-                    </div>
-                    <div className="mb-3">
-                      <label htmlFor="category" className="form-label">
-                        Category
-                      </label>
-                      <select
-                        className="form-select"
-                        id="category"
-                        name="category"
-                        value={this.state.category}
-                        onChange={this.changeCategoryHandler}
-                      >
-                        <option value="" disabled>
-                          Select a category
-                        </option>
-                        <option value="Bond">Bond</option>
-                        <option value="Equity">Equity</option>
-                        <option value="Realestate">Real Estate</option>
-                        <option value="Gold">Gold</option>
-                        <option value="Crypto">Crypto</option>
-                        <option value="Stocks">Stocks</option>
-                      </select>
-                    </div>
-                    <div className="mb-3">
-                      <label htmlFor="description" className="form-label">
-                        Description
-                      </label>
-                      <textarea
-                        required
-                        placeholder="Enter a description"
-                        id="description"
-                        name="description"
-                        className="form-control"
-                        rows="5"
-                        value={this.state.description}
-                        onChange={this.changeDescriptionHandler}
-                      ></textarea>
-                    </div>
-                    <div className="d-flex justify-content-end">
-                      <button
-                        type="submit"
-                        className="btn btn-primary me-3"
-                        onClick={this.saveOrUpdatePost}
-                      >
-                        Submit
-                      </button>
-                      <button
-                        type="button"
-                        className="btn btn-secondary"
-                        onClick={this.cancel.bind(this)}
-                      >
-                        Cancel
-                      </button>
-                    </div>
-                  </form>
+        <>
+          <Navbar />
+          <div className="container my-3">
+            <div className="row justify-content-center">
+              <div className="col-lg-8">
+                <div className="card shadow-lg border-0 rounded-lg">
+                  <div className="card-header">{this.getTitle()}</div>
+                  <div className="card-body">
+                    <form>
+                      <div className="mb-3">
+                        <label htmlFor="title" className="form-label">
+                          Title
+                        </label>
+                        <input
+                          type="text"
+                          placeholder="Enter a title"
+                          id="title"
+                          name="title"
+                          className="form-control"
+                          value={this.state.title}
+                          onChange={this.changeTitleHandler}
+                        />
+                      </div>
+                      <div className="mb-3">
+                        <label htmlFor="category" className="form-label">
+                          Category
+                        </label>
+                        <select
+                          className="form-select"
+                          id="category"
+                          name="category"
+                          value={this.state.category}
+                          onChange={this.changeCategoryHandler}
+                        >
+                          <option value="" disabled>
+                            Select a category
+                          </option>
+                          <option value="Bond">Bond</option>
+                          <option value="Equity">Equity</option>
+                          <option value="Realestate">Real Estate</option>
+                          <option value="Gold">Gold</option>
+                          <option value="Crypto">Crypto</option>
+                          <option value="Stocks">Stocks</option>
+                        </select>
+                      </div>
+                      <div className="mb-3">
+                        <label htmlFor="description" className="form-label">
+                          Description
+                        </label>
+                        <textarea
+                          required
+                          placeholder="Enter a description"
+                          id="description"
+                          name="description"
+                          className="form-control"
+                          rows="5"
+                          value={this.state.description}
+                          onChange={this.changeDescriptionHandler}
+                        ></textarea>
+                      </div>
+                      <div className="d-flex justify-content-end">
+                        <button
+                          type="submit"
+                          className="btn btn-primary me-3"
+                          onClick={this.saveOrUpdatePost}
+                        >
+                          Submit
+                        </button>
+                        <button
+                          type="button"
+                          className="btn btn-secondary"
+                          onClick={this.cancel.bind(this)}
+                        >
+                          Cancel
+                        </button>
+                      </div>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </>
       );
     }
   }

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Navigate } from "react-router-dom";
+import Navbar from "./Navbar";
 
 export default class Login extends Component {
   constructor(props) {
@@ -55,6 +56,7 @@ export default class Login extends Component {
     }
     return (
       <div className="App">
+        <Navbar />
         <div className="auth-wrapper">
           <div className="auth-inner">
             <form onSubmit={this.onSubmit}>
