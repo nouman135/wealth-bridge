@@ -19,26 +19,32 @@ export default class Navbar extends Component {
   render() {
     const isLoggedIn = this.state.loggedIN;
     let button;
-    let button2;
+
     if (isLoggedIn) {
       button = (
-        <Link className="nav-link" to="./logout">
-          {" "}
-          logout{" "}
-        </Link>
+        <li className="nav-item">
+          <Link className="nav-link" to="./logout">
+            {" "}
+            logout{" "}
+          </Link>
+        </li>
       );
     } else {
       button = (
-        <Link className="nav-link" to="./sign-in">
-          {" "}
-          login{" "}
-        </Link>
-      );
-      button2 = (
-        <Link className="nav-link" to="./sign-up">
-          {" "}
-          Sign up{" "}
-        </Link>
+        <>
+          <li className="nav-item">
+            <Link className="nav-link" to="./sign-in">
+              {" "}
+              login{" "}
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="./sign-up">
+              {" "}
+              Sign up{" "}
+            </Link>
+          </li>
+        </>
       );
     }
     return (
@@ -72,10 +78,7 @@ export default class Navbar extends Component {
                   </Link>
                 </li>
               </ul>
-              <ul className="navbar-nav">
-                <li className="nav-item">{button}</li>
-                <li className="nav-item">{button2}</li>
-              </ul>
+              <ul className="navbar-nav">{button}</ul>
             </div>
           </div>
         </nav>
