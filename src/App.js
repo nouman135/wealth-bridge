@@ -7,7 +7,7 @@ import SignUp from "./components/signup.component";
 import Dashboard from "./components/dashboard.component";
 import Logout from "./components/logout.component";
 import PostCreate from "./components/post/add.component";
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages/home.page";
 
 function App() {
   return (

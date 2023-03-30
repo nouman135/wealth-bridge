@@ -1,7 +1,7 @@
 import React from "react";
 import "./HomePage.css";
 import { Link } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/navbar.component";
 
 export default function HomePage() {
   return (

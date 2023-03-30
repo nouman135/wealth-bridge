@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Navigate } from "react-router-dom";
 import List from "./post/list.component";
 import { getUser } from "../helper/http-common";
-import Navbar from "./Navbar";
+import Navbar from "./navbar.component";
 
 export default class Dashboard extends Component {
   constructor(props) {

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PostService from "../../services/post.service";
 import withRouter from "../../helper/HOC";
-import Navbar from "../Navbar";
+import Navbar from "../navbar.component";
 
 export default withRouter(
   class Add extends Component {

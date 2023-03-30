@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Navbar from "./Navbar";
+import Navbar from "./navbar.component";
 
 export default class Logout extends Component {
   constructor(props) {
