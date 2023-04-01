@@ -155,7 +155,7 @@ export default withRouter(
                       <div className="d-flex justify-content-end">
                         <button
                           type="submit"
-                          className="btn btn-primary me-3"
+                          className="btn btn-success me-3"
                           onClick={this.saveOrUpdatePost}
                         >
                           Submit
