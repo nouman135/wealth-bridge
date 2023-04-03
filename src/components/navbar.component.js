@@ -25,11 +25,39 @@ export default class Navbar extends Component {
     if (isLoggedIn) {
       button = (
         <>
-          <li className="nav-item">
-            <Link className="nav-link" to="/logout">logout</Link>
+          <li className="nav-item dropdown">
+            <Link
+              className="nav-link dropdown-toggle"
+              id="navbarDarkDropdownMenuLink"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              to="#"
+            >
+              {name.split(" ")[0]}
+            </Link>
+            <ul
+              className="dropdown-menu"
+              aria-labelledby="navbarDarkDropdownMenuLink"
+            >
+              <li>
+                <Link className="dropdown-item" to="/list-member">
+                  {" "}
+                  View Member{" "}
+                </Link>
+              </li>
+              <li>
+                <Link className="dropdown-item" to="/profile">
+                  {" "}
+                  Profile{" "}
+                </Link>
+              </li>
+            </ul>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/dashboard"> {name.split(" ")[0]} </Link>
+            <Link className="nav-link" to="/logout">
+              logout
+            </Link>
           </li>
         </>
       );
