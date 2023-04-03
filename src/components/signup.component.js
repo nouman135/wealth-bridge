@@ -68,7 +68,7 @@ export default class SignUp extends Component {
       email: this.state.email,
       password: this.state.password,
       password_confirmation: this.state.password_confirmation,
-      role: "ADMIN",
+      role: "CUSTOMER",
     };
 
     axios
