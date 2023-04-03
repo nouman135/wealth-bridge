@@ -13,10 +13,8 @@ export default withRouter(
         posts: [],
       };
 
-      this.addPost = this.addPost.bind(this);
       this.editPost = this.editPost.bind(this);
       this.deletePost = this.deletePost.bind(this);
-      this.addMember = this.addMember.bind(this);
 
       this.navigate = this.props.navigate;
     }
@@ -37,14 +35,6 @@ export default withRouter(
       PostService.getPosts().then((res) => {
         this.setState({ posts: res.data.posts });
       });
-    }
-
-    addPost() {
-      this.navigate(`/add-post/_add`);
-    }
-
-    addMember() {
-      this.navigate(`/add-member`);
     }
 
     showPosts() {
@@ -83,19 +73,12 @@ export default withRouter(
             </div>
           </div>
         </div>
-      ))
+      ));
     }
 
     render() {
       return (
         <div className="container">
-          <header>
-            <h2>Dashboard</h2>
-            <div className="header-buttons">
-              <button onClick={() => this.addMember()}>Add RM</button>
-              <button onClick={() => this.addPost()}>Add New Idea</button>
-            </div>
-          </header>
           <main className="row">{this.showPosts()}</main>
         </div>
       );

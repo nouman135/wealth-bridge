@@ -3,8 +3,10 @@ import { Navigate } from "react-router-dom";
 import List from "./post/list.component";
 import { getUser } from "../helper/http-common";
 import Navbar from "./navbar.component";
+import withRouter from "../helper/HOC";
+import "./dashboard.component.css";
 
-export default class Dashboard extends Component {
+export default withRouter(class Dashboard extends Component {
   constructor(props) {
     super(props);
 
@@ -19,6 +21,19 @@ export default class Dashboard extends Component {
       user: udata?.user,
       loggedIN,
     };
+
+    this.addPost = this.addPost.bind(this);
+    this.addMember = this.addMember.bind(this);
+
+    this.navigate = this.props.navigate;
+  }
+
+  addPost() {
+    this.navigate(`/add-post/_add`);
+  }
+
+  addMember() {
+    this.navigate(`/add-member`);
   }
 
   render() {
@@ -26,14 +41,19 @@ export default class Dashboard extends Component {
       return <Navigate to="/sign-in" />;
     }
     return (
-      <div>
+      <>
         <Navbar />
-        <h1 className="text-black mt-5">
-          welcome to your profile{" "}
-          <span className="text-primary">{this.state.user.full_name} </span>
-        </h1>
+        <div className="container mt-5">
+          <header className="">
+            <h2>Dashboard</h2>
+            <div className="header-buttons">
+              <button onClick={() => this.addMember()}>Add RM</button>
+              <button onClick={() => this.addPost()}>Add New Idea</button>
+            </div>
+          </header>
+        </div>
         <List />
-      </div>
+      </>
     );
   }
-}
+})

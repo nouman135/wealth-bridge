@@ -18,16 +18,20 @@ export default class Navbar extends Component {
 
   render() {
     const isLoggedIn = this.state.loggedIN;
+    const name = this.state.user.full_name;
+
     let button;
 
     if (isLoggedIn) {
       button = (
-        <li className="nav-item">
-          <Link className="nav-link" to="/logout">
-            {" "}
-            logout{" "}
-          </Link>
-        </li>
+        <>
+          <li className="nav-item">
+            <Link className="nav-link" to="/logout">logout</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/dashboard"> {name.split(" ")[0]} </Link>
+          </li>
+        </>
       );
     } else {
       button = (
