@@ -30,7 +30,7 @@ export default class Dashboard extends Component {
         <Navbar />
         <h1 className="text-black mt-5">
           welcome to your profile{" "}
-          <span className="text-primary">{this.state.user.first_name} </span>
+          <span className="text-primary">{this.state.user.full_name} </span>
         </h1>
         <List />
       </div>
