@@ -16,6 +16,7 @@ export default withRouter(
       this.addPost = this.addPost.bind(this);
       this.editPost = this.editPost.bind(this);
       this.deletePost = this.deletePost.bind(this);
+      this.addMember = this.addMember.bind(this);
 
       this.navigate = this.props.navigate;
     }
@@ -40,6 +41,10 @@ export default withRouter(
 
     addPost() {
       this.navigate(`/add-post/_add`);
+    }
+
+    addMember() {
+      this.navigate(`/add-member`);
     }
 
     showPosts() {
@@ -87,7 +92,7 @@ export default withRouter(
           <header>
             <h2>Dashboard</h2>
             <div className="header-buttons">
-              <button>Add RM</button>
+              <button onClick={() => this.addMember()}>Add RM</button>
               <button onClick={() => this.addPost()}>Add New Idea</button>
             </div>
           </header>
