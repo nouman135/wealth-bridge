@@ -1,31 +1,33 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { getUser } from "../helper/http-common";
 
 export default class Navbar extends Component {
   constructor(props) {
     super(props);
-    const udata = localStorage.getItem("user");
-    const odata = JSON.parse(udata);
+    const udata = getUser();
     let loggedIN = true;
+
     if (udata == null) {
       loggedIN = false;
     }
+
     this.state = {
-      user: odata?.user,
+      user: udata?.user,
       loggedIN,
     };
   }
 
   render() {
     const isLoggedIn = this.state.loggedIN;
-    const name = this.state.user.full_name;
+    const name = this.state.user?.full_name;
 
     let button;
 
     if (isLoggedIn) {
       button = (
         <>
-          <li className="nav-item dropdown">
+          <li className="nav-item btn-group">
             <Link
               className="nav-link dropdown-toggle"
               id="navbarDarkDropdownMenuLink"
@@ -37,7 +39,7 @@ export default class Navbar extends Component {
               {name.split(" ")[0]}
             </Link>
             <ul
-              className="dropdown-menu"
+              className="dropdown-menu dropdown-menu-lg-end"
               aria-labelledby="navbarDarkDropdownMenuLink"
             >
               <li>
@@ -52,25 +54,26 @@ export default class Navbar extends Component {
                   Profile{" "}
                 </Link>
               </li>
+              <li>
+                <Link className="dropdown-item" to="/logout">
+                  {" "}
+                  logout{" "}
+                </Link>
+              </li>
             </ul>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/logout">
-              logout
-            </Link>
           </li>
         </>
       );
     } else {
       button = (
         <>
-          <li className="nav-item">
+          <li className="nav-item me-auto">
             <Link className="nav-link" to="/sign-in">
               {" "}
               login{" "}
             </Link>
           </li>
-          <li className="nav-item">
+          <li className="nav-item me-auto">
             <Link className="nav-link" to="/sign-up">
               {" "}
               Sign up{" "}
@@ -83,34 +86,34 @@ export default class Navbar extends Component {
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <div className="container">
-            <a className="navbar-brand ml-3" href="/">
+            <Link className="navbar-brand ml-3" to="/">
               Wealth Bridge
-            </a>
+            </Link>
             <button
               className="navbar-toggler"
               type="button"
-              data-toggle="collapse"
-              data-target="#navbarNav"
-              aria-controls="navbarNav"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarToggler"
+              aria-controls="navbarToggler"
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
               <span className="navbar-toggler-icon"></span>
             </button>
-            <div className="collapse navbar-collapse" id="navbarNav">
-              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item">
+            <div className="collapse navbar-collapse" id="navbarToggler">
+              <ul className="navbar-nav me-auto">
+                <li className="nav-item me-auto">
                   <Link className="nav-link" to="/">
                     Home
                   </Link>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item me-auto">
                   <Link className="nav-link" to="/dashboard">
                     Dashboard
                   </Link>
                 </li>
               </ul>
-              <ul className="navbar-nav">{button}</ul>
+            <ul className="navbar-nav ">{button}</ul>
             </div>
           </div>
         </nav>
