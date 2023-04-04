@@ -77,6 +77,11 @@ export default class Navbar extends Component {
                     Dashboard
                   </Link>
                 </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/RMDashboard">
+                    RMDashboard
+                  </Link>
+                </li>
               </ul>
               <ul className="navbar-nav">{button}</ul>
             </div>
