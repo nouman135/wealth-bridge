@@ -21,7 +21,7 @@ class AuthController extends Controller
 
     public function index()
     {
-        $users = User::all();
+        $users = User::where('role', 'like', 'MEMBER')->get();
         return response()->json([
             'status' => 'success',
             'users' => $users,

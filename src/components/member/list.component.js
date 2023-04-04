@@ -21,7 +21,7 @@ export default withRouter(
 
     componentDidMount() {
       AuthService.getUsers().then((res) => {
-        const user = res.data.users.filter((user) => user.role === "MEMBER");
+        const user = res.data.users;
 
         this.setState({ users: user });
       });
