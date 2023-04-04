@@ -78,9 +78,9 @@ export default withRouter(
 
     render() {
       return (
-        <div className="container">
+        <>
           <main className="row">{this.showPosts()}</main>
-        </div>
+        </>
       );
     }
   }
