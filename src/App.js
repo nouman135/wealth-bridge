@@ -8,7 +8,8 @@ import Dashboard from "./components/dashboard.component";
 import Logout from "./components/logout.component";
 import PostCreate from "./components/post/add.component";
 import HomePage from "./pages/home.page";
-import AddMember from "./components/member/add.component"
+import AddMember from "./components/member/add.component";
+import ListUser from "./components/member/list.component";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/logout" element={<Logout />} />
           <Route path="/add-post/:id" element={<PostCreate />} />
           <Route path="/add-member" element={<AddMember />} />
+          <Route path="/list-member" element={<ListUser />} />
         </Routes>
       </div>
     </Router>
