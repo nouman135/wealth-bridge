@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Navigate } from "react-router-dom";
 import PostList from "./post/list.component";
+import ListUser from "./member/list.component";
 import { getUser } from "../helper/http-common";
 import Navbar from "./navbar.component";
 import withRouter from "../helper/HOC";
@@ -52,7 +53,17 @@ export default withRouter(
                 <button onClick={() => this.addPost()}>Add New Idea</button>
               </div>
             </header>
-            <PostList />
+            {/* style={{display: "flex", justifyContent: "space-between"}} */}
+            <div className="row my-4">
+              <div className="col-6">
+                <h3 className="h3"> Idea Listing</h3>
+                <PostList />
+              </div>
+              <div className="col-6">
+                <h3 className="h3">RM Listing</h3>
+                <ListUser />
+              </div>
+            </div>
           </div>
         </>
       );

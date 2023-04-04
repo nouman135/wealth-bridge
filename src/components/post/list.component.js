@@ -39,7 +39,8 @@ export default withRouter(
 
     showPosts() {
       return this.state.posts.map((post) => (
-        <div key={post.id} className="col-md-6 col-xs-8 col-12 my-2 ">
+        // col-md-6 col-xs-8
+        <div key={post.id} className=" col-12 my-2 ">
           <div className="card shadow-sm text-center h-100" key={post.id}>
             <div className="card-header">
               <figure>
