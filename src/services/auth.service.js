@@ -12,4 +12,16 @@ export default new (class AuthService {
       console.log(error);
     }
   }
+
+  async deleteUser(userId) {
+    try {
+      const response = await axiosInstance.delete("/auth/user/" + userId, {
+        headers: { Authorization: getAuthorizationHeader() },
+      });
+
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
+  }
 })();

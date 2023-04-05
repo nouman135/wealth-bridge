@@ -12,12 +12,18 @@ export default withRouter(
         users: [],
       };
 
-      this.deletePost = this.deletePost.bind(this);
+      this.deleteUser = this.deleteUser.bind(this);
 
       this.navigate = this.props.navigate;
     }
 
-    deletePost(id) {}
+    deleteUser(id) {
+      AuthService.deleteUser(id).then(res => {
+        this.setState({
+          users: this.state.users.filter(usr => usr.id !== id)
+        })
+      })
+    }
 
     componentDidMount() {
       AuthService.getUsers().then((res) => {
@@ -57,7 +63,7 @@ export default withRouter(
               </button>
               <button
                 className="btn btn-danger btn-sm"
-                // onClick={() => this.deletePost(user.id)}
+                onClick={() => this.deleteUser(user.id)}
               >
                 Delete
               </button>
