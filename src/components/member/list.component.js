@@ -38,29 +38,26 @@ export default withRouter(
         // col-md-6 col-xs-8
         <div key={user.id} className=" col-12 my-2">
           <div className="card shadow-sm text-center h-100" key={user.id}>
-            <div className="card-header">
-              <figure>
+            {/* <div className="card-header">
+              
+            </div> */}
+            <div className="card-body">
+            <figure>
                 <blockquote className="blockquote">
                   <p>{user.full_name}</p>
                 </blockquote>
                 <figcaption className="blockquote-footer">
                   {user.email}
                 </figcaption>
+                <figcaption className="blockquote-footer">
+                  {user.phone}
+                </figcaption>
               </figure>
-            </div>
-            <div className="card-body">
-              <p className="card-text">{user.phone}</p>
             </div>
             <small className="text-muted my-2">
               {convertISODateTime(user.updated_at)}
             </small>
             <div className="card-footer">
-              <button
-                className="btn btn-sm"
-                // onClick={() => this.editPost(user.id)}
-              >
-                Update
-              </button>
               <button
                 className="btn btn-danger btn-sm"
                 onClick={() => this.deleteUser(user.id)}
