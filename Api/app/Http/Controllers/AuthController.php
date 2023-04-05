@@ -109,6 +109,18 @@ class AuthController extends Controller
         return response()->json(auth()->user());
     }
 
+    public function destroy($id)
+    {
+        $user = User::find($id);
+        $user->delete();
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'User deleted successfully',
+            'user' => $user,
+        ]);
+    }
+
     /**
      * Get the token array structure.
      *
