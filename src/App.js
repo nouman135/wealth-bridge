@@ -3,7 +3,6 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./components/login.component";
-import RMLogin from "./components/RMlogin.component";
 import SignUp from "./components/signup.component";
 import Dashboard from "./components/dashboard.component";
 import RMdashboard from "./components/RMdashboard.component";
@@ -22,7 +21,6 @@ function App() {
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route path="/sign-in" element={<Login />} />
-          <Route path="/RMlogin" element={<RMLogin />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/view-post/:id" element={<ViewPost />} />
           <Route path="/dashboard" element={<Dashboard />} />
