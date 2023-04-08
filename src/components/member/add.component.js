@@ -114,7 +114,7 @@ export default withRouter(
         <>
           <Navbar />
           <div className="auth-wrapper">
-            <div className="auth-inner">
+            <div className="auth-inner" style={{width: "unset"}}>
               <form onSubmit={this.onSubmit}>
                 <h3>Add Member</h3>
                 <div>

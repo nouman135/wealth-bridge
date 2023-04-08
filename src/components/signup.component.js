@@ -104,7 +104,7 @@ export default class SignUp extends Component {
     return (
       <div className="App">
         <Navbar />
-        <div className="auth-wrapper">
+        <div className="auth-wrapper" style={{marginTop: 50}}>
           <div className="auth-inner">
             <form onSubmit={this.onSubmit}>
               <h3>Sign Up</h3>
