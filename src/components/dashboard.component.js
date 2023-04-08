@@ -24,19 +24,8 @@ export default withRouter(
         loggedIN,
       };
 
-      // this.addPost = this.addPost.bind(this);
-      // this.addMember = this.addMember.bind(this);
-
       this.navigate = this.props.navigate;
     }
-
-    // addPost() {
-    //   this.navigate(`/add-post/_add`);
-    // }
-
-    // addMember() {
-    //   this.navigate(`/add-member`);
-    // }
 
     render() {
       if (this.state.loggedIN === false) {
@@ -48,12 +37,7 @@ export default withRouter(
           <div className="container mt-5">
             <header className="">
               <h2>Dashboard</h2>
-              {/* <div className="header-buttons">
-                <button onClick={() => this.addMember()}>Add RM</button>
-                <button onClick={() => this.addPost()}>Add New Idea</button>
-              </div> */}
             </header>
-            {/* style={{display: "flex", justifyContent: "space-between"}} */}
             <div className="row my-4">
               <div className="col-6">
                 <h3 className="h3"> Idea Listing</h3>
