@@ -27,6 +27,29 @@ export default class Navbar extends Component {
     if (isLoggedIn) {
       button = (
         <>
+          {this.state.user.role === "ADMIN" ? (
+            <>
+              <li className="nav-item">
+                <Link className="nav-link" to="/add-post/_add">
+                  Add Idea
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/add-member">
+                  Add Member
+                </Link>
+              </li>
+            </>
+          ) : (
+            <>
+              <li className="nav-item">
+                <Link className="nav-link" to="#">
+                  Wallet
+                </Link>
+              </li>
+            </>
+          )}
+
           <li className="nav-item btn-group">
             <Link
               className="nav-link dropdown-toggle"
