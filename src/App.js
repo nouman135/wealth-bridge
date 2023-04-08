@@ -12,6 +12,7 @@ import ViewPost from "./components/post/view.component";
 import HomePage from "./pages/home.page";
 import Clients from "./components/clients.component";
 import PostedIdea from "./components/PostedIdea.component";
+import RMlogin from "./components/RMlogin.component";
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path="/view-post/:id" element={<ViewPost />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/RMdashboard" element={<RMdashboard />} />
+          <Route path="/RMlogin" element={<RMlogin />} />
           <Route path="/Clients" element={<Clients />} />
           <Route path="/PostedIdea" element={<PostedIdea />} />
           <Route path="/logout" element={<Logout />} />
