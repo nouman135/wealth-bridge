@@ -43,12 +43,6 @@ export default class Navbar extends Component {
               aria-labelledby="navbarDarkDropdownMenuLink"
             >
               <li>
-                <Link className="dropdown-item" to="/list-member">
-                  {" "}
-                  View Member{" "}
-                </Link>
-              </li>
-              <li>
                 <Link className="dropdown-item" to="/profile">
                   {" "}
                   Profile{" "}
@@ -113,7 +107,7 @@ export default class Navbar extends Component {
                   </Link>
                 </li>
               </ul>
-            <ul className="navbar-nav ">{button}</ul>
+              <ul className="navbar-nav ">{button}</ul>
             </div>
           </div>
         </nav>
