@@ -10,6 +10,7 @@ import PostCreate from "./components/post/add.component";
 import HomePage from "./pages/home.page";
 import AddMember from "./components/member/add.component";
 import ListComponent from "./components/member/list.component";
+import Profile from "./pages/profile.page";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/add-post/:id" element={<PostCreate />} />
           <Route path="/add-member" element={<AddMember />} />
           <Route path="/list-member" element={<ListComponent />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </div>
     </Router>

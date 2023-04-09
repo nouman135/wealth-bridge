@@ -47,7 +47,7 @@ export default withRouter(
                   {user.email}
                 </figcaption>
                 <figcaption className="blockquote-footer">
-                  {user.phone}
+                  {user.category}
                 </figcaption>
               </figure>
             </div>

@@ -16,7 +16,7 @@ export default withRouter(
       if (udata == null) loggedIN = false;
 
       this.onChangeFullName = this.onChangeFullName.bind(this);
-      this.onChangePhone = this.onChangePhone.bind(this);
+      this.onChangeCategory = this.onChangeCategory.bind(this);
       this.onChangeUserEmail = this.onChangeUserEmail.bind(this);
       this.onChangePassword = this.onChangePassword.bind(this);
       this.onChangePasswordConfirmation =
@@ -25,7 +25,7 @@ export default withRouter(
 
       this.state = {
         full_name: "",
-        phone: "",
+        category: "",
         email: "",
         password: "",
         password_confirmation: "",
@@ -38,8 +38,8 @@ export default withRouter(
     onChangeFullName(e) {
       this.setState({ full_name: e.target.value });
     }
-    onChangePhone(e) {
-      this.setState({ phone: e.target.value });
+    onChangeCategory(e) {
+      this.setState({ category: e.target.value });
     }
     onChangeUserEmail(e) {
       this.setState({ email: e.target.value });
@@ -57,9 +57,6 @@ export default withRouter(
       if (this.state.full_name.length < 4 || this.state.full_name.length > 20) {
         alert("Full-name should be between 4-20 charaters");
       }
-      if (this.state.phone.length < 5 || this.state.phone.length > 12) {
-        alert("Phone number should be between 5-12 digits");
-      }
       if (this.state.password.length < 6) {
         alert("Password should be greater then 5 charaters");
       }
@@ -69,7 +66,7 @@ export default withRouter(
 
       const userObject = {
         full_name: this.state.full_name,
-        phone: this.state.phone,
+        category: this.state.category,
         email: this.state.email,
         password: this.state.password,
         password_confirmation: this.state.password_confirmation,
@@ -95,7 +92,7 @@ export default withRouter(
 
       this.setState({
         full_name: "",
-        phone: "",
+        category: "",
         email: "",
         password: "",
         password_confirmation: "",
@@ -114,7 +111,7 @@ export default withRouter(
         <>
           <Navbar />
           <div className="auth-wrapper">
-            <div className="auth-inner" style={{width: "unset"}}>
+            <div className="auth-inner" style={{ width: "unset" }}>
               <form onSubmit={this.onSubmit}>
                 <h3>Add Member</h3>
                 <div>
@@ -132,14 +129,23 @@ export default withRouter(
                     </div>
                     <div className="col-md-6 col-12">
                       <label>Phone Number</label>
-                      <input
-                        type="number"
-                        className="form-control"
-                        placeholder="Enter phone number"
-                        onChange={this.onChangePhone}
-                        name="phone"
-                        value={this.state.phone}
-                      />
+                      <select
+                        className="form-select"
+                        id="category"
+                        name="category"
+                        value={this.state.category}
+                        onChange={this.onChangeCategory}
+                      >
+                        <option value="" disabled>
+                          Select a category
+                        </option>
+                        <option value="Bond">Bond</option>
+                        <option value="Equity">Equity</option>
+                        <option value="Realestate">Real Estate</option>
+                        <option value="Gold">Gold</option>
+                        <option value="Crypto">Crypto</option>
+                        <option value="Stocks">Stocks</option>
+                      </select>
                     </div>
                   </div>
                   <div className="row mb-2">
