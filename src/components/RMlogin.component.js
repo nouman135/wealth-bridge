@@ -5,6 +5,7 @@ import { Navigate } from "react-router-dom";
 
 
 function RMlogin() {
+  
   // React States
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -54,7 +55,7 @@ function RMlogin() {
     name === errorMessages.name && (
       <div className="error">{errorMessages.message}</div>
     );
-
+  
   // JSX code for login form
   const renderForm = (
     <div className="form">
@@ -75,21 +76,17 @@ function RMlogin() {
       </form>
     </div>
   );
-
   return (
     <div className="RMlogin">
       <div className="login-form">
         <div className="title">Sign In</div>
-        {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
-        <center>
-            <button> 
-            <Navigate to={`/RMdashboard`} />
-            </button>
-        </center>
-
+        {isSubmitted ? <div>return <Navigate to={`/RMdashboard`} />;</div> : renderForm}
+        
       </div>
     </div>
-  );
-}
+   );
+} 
+
+
 
 export default RMlogin;

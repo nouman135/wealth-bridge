@@ -3,7 +3,7 @@ import axios from "axios";
 import { Navigate } from "react-router-dom";
 import Navbar from "./navbar.component";
 
-export default class Login extends Component {
+export default class Login extends Component {role
   constructor(props) {
     super(props);
     const udata = localStorage.getItem("user");

@@ -1,42 +1,45 @@
-import axios from "axios"
-import { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
+import axios from "axios";
 
-export default function Clients() {
-    const [users, setUsers] = useState([]);
-    useEffect(() => {
-        getUsers();
-    }, []);
-    function getUsers() {
-        axios.get('http://localhost:8000/api/users/').then(function(response) {
-            console.log(response.data);
-            setUsers(response.data);
-        });
-    }
-    return (
-        <div>
-            <h1>List of Clients</h1>
+function Clients() {
+    const [data, setData]= useState([])
+    useEffect(()=>{
+       axios.get('http://127.0.0.1:8000/api/clientprofile') 
+       .then(res => setData(res.data))
+       .catch(err => console.log(err))
+    }, [])
+
+  return (
+    <div className="container">
+        <div className="mt-3">
+            <h3>Clients Profiles</h3>
             <table>
                 <thead>
                     <tr>
-                        <th>#</th>
+                        <th>ID</th>
                         <th>Name</th>
-                        <th>Email</th>
-                        <th>Mobile</th>
-                        <th>Actions</th>
+                        <th>Category</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {users.map((user, key) =>
-                        <tr key={key}>
-                            <td>{user.id}</td>
-                            <td>{user.name}</td>
-                            <td>{user.email}</td>
-                            <td>{user.mobile}</td>
-                        </tr>
-                    )}
+                    {
+                        data.map((clientprofile, index) =>{
+                            return <tr key={index}>
+                                <td>{clientprofile.ID}</td>
+                                <td>{clientprofile.Name}</td>
+                                <td>{clientprofile.Category}</td> 
+                            </tr>
 
+                        })
+                    }
                 </tbody>
             </table>
+
         </div>
-    )
+
+
+    </div>
+  );
 }
+
+export default Clients;

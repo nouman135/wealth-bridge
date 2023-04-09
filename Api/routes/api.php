@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
-
+use App\Http\Controllers\clientprofileController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -32,12 +32,20 @@ Route::group([
     'middleware' => 'api',
 
 ], function ($router) {
+    Route::get('Tposts', [PostsController::class, 'index']);
+    Route::get('Tposts/{Tposts}', [PostsController::class, 'show']);
     Route::get('posts', [PostController::class, 'index']);
     Route::post('post', [PostController::class, 'store']);
     Route::get('post/{id}', [PostController::class, 'show']);
     Route::put('post/{id}', [PostController::class, 'update']);
     Route::delete('post/{id}', [PostController::class, 'destroy']);
     Route::get('/user/{id}', [UserController::class, 'show']);
+    Route::get('clientprofile', [clientprofileController::class, 'index']);
+    Route::get('clientprofile/{clientprofile}', [clientprofileController::class, 'show']);
+
 });
+
+
+
 
 
