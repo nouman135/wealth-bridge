@@ -128,7 +128,7 @@ export default withRouter(
                       />
                     </div>
                     <div className="col-md-6 col-12">
-                      <label>Phone Number</label>
+                      <label>Category</label>
                       <select
                         className="form-select"
                         id="category"

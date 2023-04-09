@@ -56,7 +56,7 @@ export default class Profile extends Component {
                       type="text"
                       className="form-control"
                       id="Category"
-                      // value={data.user.category}
+                      value={this.state.user.category}
                       placeholder="Investment Field here"
                       disabled
                     />

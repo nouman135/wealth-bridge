@@ -14,6 +14,7 @@ export default class SignUp extends Component {
 
     this.onChangeFullName = this.onChangeFullName.bind(this);
     this.onChangePhone = this.onChangePhone.bind(this);
+    this.onChangeCategory = this.onChangeCategory.bind(this);
     this.onChangeUserEmail = this.onChangeUserEmail.bind(this);
     this.onChangePassword = this.onChangePassword.bind(this);
     this.onChangePasswordConfirmation =
@@ -24,6 +25,7 @@ export default class SignUp extends Component {
       full_name: "",
       phone: "",
       email: "",
+      category: "",
       password: "",
       password_confirmation: "",
       loggedIN,
@@ -38,6 +40,9 @@ export default class SignUp extends Component {
   }
   onChangeUserEmail(e) {
     this.setState({ email: e.target.value });
+  }
+  onChangeCategory(e) {
+    this.setState({category: e.target.value})
   }
   onChangePassword(e) {
     this.setState({ password: e.target.value });
@@ -55,6 +60,9 @@ export default class SignUp extends Component {
     if (this.state.phone.length < 5 || this.state.phone.length > 12) {
       alert("Phone number should be between 5-12 digits");
     }
+    if (this.state.category <= 0) {
+      alert("Category must be selected")
+    }  
     if (this.state.password.length < 6) {
       alert("Password should be greater then 5 charaters");
     }
@@ -66,6 +74,7 @@ export default class SignUp extends Component {
       full_name: this.state.full_name,
       phone: this.state.phone,
       email: this.state.email,
+      category: this.state.category,
       password: this.state.password,
       password_confirmation: this.state.password_confirmation,
       role: "CUSTOMER",
@@ -92,6 +101,7 @@ export default class SignUp extends Component {
       full_name: "",
       phone: "",
       email: "",
+      category: "",
       password: "",
       password_confirmation: "",
     });
@@ -130,6 +140,26 @@ export default class SignUp extends Component {
                     name="phone"
                     value={this.state.phone}
                   />
+                </div>
+                <div className="mb-3">
+                <label>Category</label>
+                      <select
+                        className="form-select"
+                        id="category"
+                        name="category"
+                        value={this.state.category}
+                        onChange={this.onChangeCategory}
+                      >
+                        <option value="" disabled>
+                          Select a category
+                        </option>
+                        <option value="Bond">Bond</option>
+                        <option value="Equity">Equity</option>
+                        <option value="Realestate">Real Estate</option>
+                        <option value="Gold">Gold</option>
+                        <option value="Crypto">Crypto</option>
+                        <option value="Stocks">Stocks</option>
+                      </select>
                 </div>
                 <div className="mb-3">
                   <label>Email address</label>
