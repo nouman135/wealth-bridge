@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import withRouter from "../../helper/HOC";
 import AuthService from "../../services/auth.service";
 import { convertISODateTime } from "../../helper/date";
+import Navbar from "../navbar.component";
 
 export default withRouter(
   class List extends Component {
@@ -18,11 +19,11 @@ export default withRouter(
     }
 
     deleteUser(id) {
-      AuthService.deleteUser(id).then(res => {
+      AuthService.deleteUser(id).then((res) => {
         this.setState({
-          users: this.state.users.filter(usr => usr.id !== id)
-        })
-      })
+          users: this.state.users.filter((usr) => usr.id !== id),
+        });
+      });
     }
 
     componentDidMount() {
@@ -35,14 +36,10 @@ export default withRouter(
 
     showUsers() {
       return this.state.users.map((user) => (
-        // col-md-6 col-xs-8
-        <div key={user.id} className=" col-12 my-2">
+        <div key={user.id} className="col-md-4 col-xs-8 col-12 my-2">
           <div className="card shadow-sm text-center h-100" key={user.id}>
-            {/* <div className="card-header">
-              
-            </div> */}
             <div className="card-body">
-            <figure>
+              <figure>
                 <blockquote className="blockquote">
                   <p>{user.full_name}</p>
                 </blockquote>
@@ -73,7 +70,11 @@ export default withRouter(
     render() {
       return (
         <>
-          <main className="row">{this.showUsers()}</main>
+          <Navbar />
+          <main className="container mt-5">
+            <h3 className="h3"> RM Listing</h3>
+            <div className="row">{this.showUsers()}</div>
+          </main>
         </>
       );
     }

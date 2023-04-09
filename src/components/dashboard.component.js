@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Navigate } from "react-router-dom";
 import PostList from "./post/list.component";
-import ListUser from "./member/list.component";
 import { getUser } from "../helper/http-common";
 import Navbar from "./navbar.component";
 import withRouter from "../helper/HOC";
@@ -35,18 +34,12 @@ export default withRouter(
         <>
           <Navbar />
           <div className="container mt-5">
-            <header className="">
+            <header>
               <h2>Dashboard</h2>
             </header>
-            <div className="row my-4">
-              <div className="col-6">
-                <h3 className="h3"> Idea Listing</h3>
-                <PostList />
-              </div>
-              <div className="col-6">
-                <h3 className="h3">RM Listing</h3>
-                <ListUser />
-              </div>
+            <div className="my-4">
+              <h3 className="h3"> Idea Listing</h3>
+              <PostList />
             </div>
           </div>
         </>

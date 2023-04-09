@@ -29,20 +29,25 @@ export default class Navbar extends Component {
         <>
           {this.state.user.role === "ADMIN" ? (
             <>
-              <li className="nav-item">
+              <li className="nav-item me-auto">
                 <Link className="nav-link" to="/add-post/_add">
                   Add Idea
                 </Link>
               </li>
-              <li className="nav-item">
+              <li className="nav-item me-auto">
                 <Link className="nav-link" to="/add-member">
                   Add Member
+                </Link>
+              </li>
+              <li className="nav-item me-auto">
+                <Link className="nav-link" to="/list-member">
+                  List Member
                 </Link>
               </li>
             </>
           ) : (
             <>
-              <li className="nav-item">
+              <li className="nav-item me-auto">
                 <Link className="nav-link" to="#">
                   Wallet
                 </Link>
