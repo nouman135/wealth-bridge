@@ -81,7 +81,7 @@ export default withRouter(
         .then((res) => {
           if (res.data.message === "User successfully registered") {
             alert("Member added Successfully");
-            window.location = "/dashboard";
+            window.location = "/list-member";
           }
         })
         .catch((error) => {
@@ -103,7 +103,7 @@ export default withRouter(
     }
 
     cancel() {
-      this.navigate("/dashboard");
+      this.navigate("/list-member");
     }
 
     render() {

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PostService from "../../services/post.service";
 import withRouter from "../../helper/HOC";
 import { convertISODateTime } from "../../helper/date";
+import { getUser } from "../../helper/http-common";
 import "./list.component.css";
 
 export default withRouter(
@@ -9,7 +10,10 @@ export default withRouter(
     constructor(props) {
       super(props);
 
+      const udata = getUser();
+
       this.state = {
+        user: udata?.user,
         posts: [],
       };
 
@@ -58,18 +62,26 @@ export default withRouter(
               {convertISODateTime(post.updated_at)}
             </small>
             <div className="card-footer">
-              <button
-                className="btn btn-sm"
-                onClick={() => this.editPost(post.id)}
-              >
-                Update
-              </button>
-              <button
-                className="btn btn-danger btn-sm"
-                onClick={() => this.deletePost(post.id)}
-              >
-                Delete
-              </button>
+              {this.state.user.role === "ADMIN" ? (
+                <>
+                  <button
+                    className="btn btn-sm"
+                    onClick={() => this.editPost(post.id)}
+                  >
+                    Update
+                  </button>
+                  <button
+                    className="btn btn-danger btn-sm"
+                    onClick={() => this.deletePost(post.id)}
+                  >
+                    Delete
+                  </button>
+                </>
+              ) : (
+                <>
+                  <button className="btn btn-sm">Wallet</button>
+                </>
+              )}
             </div>
           </div>
         </div>

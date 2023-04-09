@@ -36,12 +36,12 @@ export default class Navbar extends Component {
               </li>
               <li className="nav-item me-auto">
                 <Link className="nav-link" to="/add-member">
-                  Add Member
+                  Add RM
                 </Link>
               </li>
               <li className="nav-item me-auto">
                 <Link className="nav-link" to="/list-member">
-                  List Member
+                  List RM
                 </Link>
               </li>
             </>
