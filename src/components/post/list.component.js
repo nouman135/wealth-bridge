@@ -79,7 +79,7 @@ export default withRouter(
                 </>
               ) : (
                 <>
-                  <button className="btn btn-sm">Wallet</button>
+                  <button className="btn btn-sm btn-dark">Wallet</button>
                 </>
               )}
             </div>
