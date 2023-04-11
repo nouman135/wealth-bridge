@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\clientprofileController;
+use App\Http\Controllers\postsController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -42,6 +43,8 @@ Route::group([
     Route::get('/user/{id}', [UserController::class, 'show']);
     Route::get('clientprofile', [clientprofileController::class, 'index']);
     Route::get('clientprofile/{clientprofile}', [clientprofileController::class, 'show']);
+    Route::get('posts', [postsController::class, 'index']);
+    Route::get('posts/{posts}', [postsController::class, 'show']);
 
 });
 
