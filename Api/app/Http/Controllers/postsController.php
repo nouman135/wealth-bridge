@@ -10,8 +10,8 @@ class postsController extends Controller
 	{
 	    return posts::all();
 	}
-	public function show(posts $posts)
+	public function show(posts $category)
 	{
-	    return $posts;
+	    return $category;
 	}
 }
