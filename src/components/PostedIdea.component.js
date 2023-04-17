@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import "./table.css"
+import Taguser from "./taguser.component";
 
 function PostedIdea() {
     const [data, setData]= useState([])
@@ -21,6 +22,8 @@ function PostedIdea() {
                         <th>Title</th>
                         <th>Category</th>
                         <th>Description</th>
+                        <th>Tag users </th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -31,6 +34,8 @@ function PostedIdea() {
                                 <td>{posts.title}</td>
                                 <td>{posts.category}</td> 
                                 <td>{posts.description}</td> 
+                                <td><Taguser /></td> 
+                               
                             </tr>
 
                         })

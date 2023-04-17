@@ -33,8 +33,7 @@ Route::group([
     'middleware' => 'api',
 
 ], function ($router) {
-    Route::get('Tposts', [PostsController::class, 'index']);
-    Route::get('Tposts/{category}', [PostsController::class, 'show']);
+
     Route::get('posts', [PostController::class, 'index']);
     Route::post('post', [PostController::class, 'store']);
     Route::get('post/{id}', [PostController::class, 'show']);

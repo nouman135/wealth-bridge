@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import "./table.css"
+import Taguser from "./taguser.component";
 
 function Clients() {
     const [data, setData]= useState([])
@@ -20,15 +21,17 @@ function Clients() {
                         <th>ID</th>
                         <th>Name</th>
                         <th>Category</th>
+                       
                     </tr>
                 </thead>
                 <tbody>
                     {
-                        data.map((clientprofile, index) =>{
-                            return <tr key={index}>
+                        data.map((clientprofile, show) =>{
+                            return <tr key={show}>
                                 <td>{clientprofile.ID}</td>
                                 <td>{clientprofile.Name}</td>
                                 <td>{clientprofile.Category}</td> 
+                                
                             </tr>
 
                         })

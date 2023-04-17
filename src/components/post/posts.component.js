@@ -3,7 +3,7 @@ import PostService from "../../services/post.service";
 import withRouter from "../../helper/HOC";
 import { convertISODateTime } from "../../helper/date";
 import "./list.component.css";
-import { OKShareButton, WorkplaceShareButton } from "react-share";
+import { WorkplaceShareButton } from "react-share";
 export default withRouter(
   class Post extends Component {
     constructor(props) {
