@@ -12,6 +12,8 @@ import AddMember from "./components/member/add.component";
 import ListComponent from "./components/member/list.component";
 import Profile from "./pages/profile.page";
 
+import NotificationComponent from "./components/notification/notification.component";
+
 function App() {
   return (
     <Router>
@@ -26,6 +28,7 @@ function App() {
           <Route path="/add-member" element={<AddMember />} />
           <Route path="/list-member" element={<ListComponent />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/notifications" element={<NotificationComponent />} />
         </Routes>
       </div>
     </Router>
