@@ -11,7 +11,8 @@ import HomePage from "./pages/home.page";
 import AddMember from "./components/member/add.component";
 import ListComponent from "./components/member/list.component";
 import Profile from "./pages/profile.page";
-
+import CartComponent from "./components/cart/cart.component";
+import ChatComponent from "./components/contact/contact.component";
 import NotificationComponent from "./components/notification/notification.component";
 
 function App() {
@@ -28,6 +29,8 @@ function App() {
           <Route path="/add-member" element={<AddMember />} />
           <Route path="/list-member" element={<ListComponent />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/carts" element={<CartComponent />} />
+          <Route path="/chats" element={<ChatComponent />} />
           <Route path="/notifications" element={<NotificationComponent />} />
         </Routes>
       </div>

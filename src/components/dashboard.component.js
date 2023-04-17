@@ -35,7 +35,11 @@ export default withRouter(
           <Navbar />
           <div className="container mt-5">
             <header>
-              <h2>Dashboard</h2>
+              {this.state.user.role === "CUSTOMER" ? (
+                <h2>Welcome {this.state.user.full_name}</h2>
+              ) : (
+                <h2>Dashboard</h2>
+              )}
             </header>
             <div className="my-4">
               <h3 className="h3"> Idea Listing</h3>

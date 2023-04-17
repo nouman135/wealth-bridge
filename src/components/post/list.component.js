@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PostService from "../../services/post.service";
+import CartService from "../../services/cart.service";
 import withRouter from "../../helper/HOC";
 import { convertISODateTime } from "../../helper/date";
 import { getUser } from "../../helper/http-common";
@@ -20,6 +21,8 @@ export default withRouter(
       this.editPost = this.editPost.bind(this);
       this.deletePost = this.deletePost.bind(this);
 
+      this.addCart = this.addCart.bind(this);
+
       this.navigate = this.props.navigate;
     }
 
@@ -38,6 +41,19 @@ export default withRouter(
     componentDidMount() {
       PostService.getPosts().then((res) => {
         this.setState({ posts: res.data.posts });
+      });
+    }
+
+    addCart(title, description, category) {
+      let cart = {
+        title: title,
+        description: description,
+        category: category,
+        userId: this.state.user.id,
+      };
+
+      CartService.createCart(cart).then((res) => {
+        alert("added to Wallet");
       });
     }
 
@@ -79,7 +95,14 @@ export default withRouter(
                 </>
               ) : (
                 <>
-                  <button className="btn btn-sm btn-dark">Wallet</button>
+                  <button
+                    className="btn btn-sm btn-dark"
+                    onClick={() =>
+                      this.addCart(post.title, post.description, post.category)
+                    }
+                  >
+                    Add to Wallet
+                  </button>
                 </>
               )}
             </div>

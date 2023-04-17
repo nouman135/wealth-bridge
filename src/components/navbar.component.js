@@ -48,8 +48,18 @@ export default class Navbar extends Component {
           ) : (
             <>
               <li className="nav-item me-auto">
-                <Link className="nav-link" to="#">
+                <Link className="nav-link" to="/carts">
                   Wallet
+                </Link>
+              </li>
+              <li className="nav-item me-auto">
+                <Link className="nav-link" to="/chats">
+                  Contact
+                </Link>
+              </li>
+              <li className="nav-item me-auto">
+                <Link className="nav-link" to="/notifications">
+                  Notification
                 </Link>
               </li>
             </>
