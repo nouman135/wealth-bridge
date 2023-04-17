@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\ChatController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,5 +41,13 @@ Route::group([
     Route::get('post/{id}', [PostController::class, 'show']);
     Route::put('post/{id}', [PostController::class, 'update']);
     Route::delete('post/{id}', [PostController::class, 'destroy']);
+    
+    Route::get('carts/{userId}', [CartController::class, 'index']);
+    Route::post('cart', [CartController::class, 'store']);
+    Route::delete('cart/{id}', [CartController::class, 'destroy']);
+
+    Route::get('chats/{userId}/member/{memberId}', [ChatController::class, 'index']);
+    Route::get('notifications/{userId}', [ChatController::class, 'notification']);
+    Route::post('chat', [ChatController::class, 'store']);
 });
 
