@@ -11,7 +11,7 @@ export default function HomePage() {
         <div className="container">
           <div className="row">
             <div className="col-lg-8 mx-auto text-center">
-              <h1>Welcome to Wealth Management App</h1>
+              <h1>Welcome to Wealth Bridge</h1>
               <p>
                 Where our Relationship Managers share their wealth management
                 strategies and insights.

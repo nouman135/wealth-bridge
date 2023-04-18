@@ -24,9 +24,9 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
-            'category' => 'required|string|max:255'
+            'title' => 'required|string|max:500',
+            'description' => 'required|string|max:500',
+            'category' => 'required|string|max:500'
         ]);
 
         $post = Post::create([
@@ -54,9 +54,9 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
-            'category' => 'required|string|max:255'
+            'title' => 'required|string|max:500',
+            'description' => 'required|string|max:500',
+            'category' => 'required|string|max:500'
         ]);
 
         $post = Post::find($id);
