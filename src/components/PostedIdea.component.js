@@ -22,7 +22,7 @@ function PostedIdea() {
                         <th>Title</th>
                         <th>Category</th>
                         <th>Description</th>
-                        <th>Tag users </th>
+                        <th>Action </th>
 
                     </tr>
                 </thead>
@@ -34,7 +34,7 @@ function PostedIdea() {
                                 <td>{posts.title}</td>
                                 <td>{posts.category}</td> 
                                 <td>{posts.description}</td> 
-                                <td><Taguser /></td> 
+                                <td><button>Share</button></td> 
                                
                             </tr>
 

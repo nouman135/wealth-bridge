@@ -76,12 +76,7 @@ export default class Navbar extends Component {
                   <Link className="nav-link" to="/dashboard">
                     Dashboard
                   </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/RMlogin">
-                    RMlogin
-                  </Link>
-                </li>
+              </li>
               </ul>
               <ul className="navbar-nav">{button}</ul>
             </div>

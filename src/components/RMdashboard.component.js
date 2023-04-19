@@ -1,15 +1,23 @@
 import React from "react";
 import "./Sidenav.css"
+import { Link } from "react-router-dom";
+
 export default function RMDashboard() {
   return (
     <>
     <div><h1>Welcome to RM dashboard</h1></div>
     <div className="sidenav">
       <ul>
-                  <li><a href="#About">About</a></li>
+                  <li><a href="#Home">Home</a></li>
                   <li><a href="/PostedIdea">Posted ideas</a></li>
                   <li><a href="/Clients">Clients</a></li>
-                  <li><a href="#Contact">Contact</a></li>
+                  <li className="nav-item">
+                  <Link to="/logout">
+                     {" "}
+                   logout{" "}
+          </Link>
+        </li>
+                  
       </ul>
     </div>
       <div className="hero">
